@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "title": "Frontend Web Developer",
+        "company": "SPCL Infotech",
+        "location": "Pune, Maharashtra",
+        "category": "IT",
+        "experience": "Fresher",
+        "salary": "₹3,50,000 - ₹5,000,000 PA",
+        "description": "Join our team to build responsive and robust web applications using modern HTML, CSS, and JavaScript frameworks."
+    },
+    {
+        "id": 2,
+        "title": "Systems Engineer (Prime)",
+        "company": "TCS (Tata Consultancy Services)",
+        "location": "Mumbai, Maharashtra",
+        "category": "IT",
+        "experience": "Fresher",
+        "salary": "₹9,00,000 PA",
+        "description": "We are looking for highly motivated individuals to develop scalable enterprise applications and optimize system architecture."
+    },
+    {
+        "id": 3,
+        "title": "Technology Analyst",
+        "company": "Deloitte",
+        "location": "Hyderabad, Telangana",
+        "category": "IT",
+        "experience": "Fresher",
+        "salary": "₹7,50,000 PA",
+        "description": "Analyze complex business requirements and design innovative technical solutions for our global enterprise clients."
+    },
+    {
+        "id": 4,
+        "title": "Associate Software Engineer",
+        "company": "CSM Technologies",
+        "location": "Bhubaneswar, Odisha",
+        "category": "IT",
+        "experience": "Fresher",
+        "salary": "₹4,00,000 - ₹6,00,000 PA",
+        "description": "Participate in cutting-edge development projects to drive technological innovation in e-governance and corporate sectors."
+    },
+    {
+        "id": 5,
+        "title": "Civil / Architectural Drafter",
+        "company": "Dynamic Design Solutions",
+        "location": "Bhubaneswar, Odisha",
+        "category": "Design",
+        "experience": "Mid-level",
+        "salary": "₹4,50,000 PA",
+        "description": "Create detailed architectural drafts, client presentations, and digital branding assets for various civil engineering projects."
+    },
+    {
+        "id": 6,
+        "title": "Senior Full Stack Developer",
+        "company": "Infosys",
+        "location": "Bengaluru, Karnataka",
+        "category": "IT",
+        "experience": "Senior",
+        "salary": "₹18,00,000 PA",
+        "description": "Lead the development of microservices and complex frontend architectures for high-traffic enterprise applications."
+    },
+    {
+        "id": 7,
+        "title": "Digital Marketing Specialist",
+        "company": "Wipro",
+        "location": "Chennai, Tamil Nadu",
+        "category": "Marketing",
+        "experience": "Mid-level",
+        "salary": "₹8,00,000 PA",
+        "description": "Drive SEO/SEM strategies, manage online ad campaigns, and analyze web traffic metrics to improve digital presence."
+    },
+    {
+        "id": 8,
+        "title": "Product Designer (UI/UX)",
+        "company": "Zoho",
+        "location": "Chennai, Tamil Nadu",
+        "category": "Design",
+        "experience": "Mid-level",
+        "salary": "₹12,00,000 PA",
+        "description": "Craft intuitive, accessible, and visually appealing interfaces for our expanding suite of business and productivity applications."
+    },
+    {
+        "id": 9,
+        "title": "Cloud Solutions Architect",
+        "company": "Tech Mahindra",
+        "location": "Pune, Maharashtra",
+        "category": "IT",
+        "experience": "Senior",
+        "salary": "₹24,00,000 PA",
+        "description": "Design and deploy scalable, highly available, and fault-tolerant cloud computing systems on AWS and Azure platforms."
+    },
+    {
+        "id": 10,
+        "title": "Data Scientist",
+        "company": "Reliance Jio",
+        "location": "Navi Mumbai, Maharashtra",
+        "category": "IT",
+        "experience": "Mid-level",
+        "salary": "₹15,00,000 PA",
+        "description": "Leverage massive telecom datasets to build predictive machine learning models and drive strategic network business decisions."
+    }
+]
