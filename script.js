@@ -1,4 +1,4 @@
-const API_URL = 'https://job-listing-website-qxzu.onrender.com';
+const API_URL = 'https://job-listing-website-qxzu.onrender.com/api/jobs';
 
 // --- DOM Elements ---
 const jobListingsContainer = document.getElementById('jobListings');
