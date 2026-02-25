@@ -141,7 +141,11 @@ function renderJobs(jobs) {
         return;
     }
 
-    jobs.forEach(job => {
+    jobs.forEach((job, index) => {
+        // --- THE FIX: Ensure every job has a safe string ID for the modal ---
+        const safeId = String(job.id || `job-tmp-${index}`);
+        job.id = safeId; // Save it back to the object so the modal can find it
+        
         const card = document.createElement('div');
         // AI Startup Premium Custom Glass card style - dynamically dark/light
         card.className = "job-card pt-6 px-6 pb-5 rounded-3xl flex flex-col justify-between h-full animate-fade-in-up border border-slate-200 dark:border-white/5 relative overflow-hidden bg-white dark:bg-[#0f172a] shadow-sm";
@@ -154,7 +158,9 @@ function renderJobs(jobs) {
             'from-emerald-400 to-cyan-500',
             'from-blue-500 to-purple-600'
         ];
-        const colorIndex = (job.id || 1) % gradients.length;
+        
+        // Use our index for the color rotation
+        const colorIndex = index % gradients.length;
         const selectedGradient = gradients[colorIndex];
 
         card.innerHTML = `
@@ -172,7 +178,7 @@ function renderJobs(jobs) {
                     <span class="text-[11px] font-semibold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/50 rounded-lg px-2.5 py-1 tracking-wide uppercase">${job.experience}</span>
                     ${job.salary ? `<span class="text-[11px] font-semibold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/50 rounded-lg px-2.5 py-1 tracking-wide uppercase">${job.salary}</span>` : ''}
                 </div>
-                <button onclick="openModal(${job.id})" class="w-full py-3 rounded-2xl bg-transparent border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-50 dark:hover:bg-white/10 hover:border-slate-300 dark:hover:border-white/20 hover:text-slate-900 dark:hover:text-white transition-all duration-300 flex items-center justify-center group/btn mt-2">
+                <button onclick="openModal('${safeId}')" class="w-full py-3 rounded-2xl bg-transparent border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-50 dark:hover:bg-white/10 hover:border-slate-300 dark:hover:border-white/20 hover:text-slate-900 dark:hover:text-white transition-all duration-300 flex items-center justify-center group/btn mt-2">
                     View Details
                     <svg class="w-4 h-4 ml-2 opacity-60 group-hover/btn:opacity-100 translate-x-0 group-hover/btn:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </button>
