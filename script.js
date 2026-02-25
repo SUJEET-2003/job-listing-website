@@ -1,4 +1,4 @@
-const API_URL = 'http://127.0.0.1:8000/api/jobs';
+const API_URL = 'https://job-listing-website-qxzu.onrender.com';
 
 // --- DOM Elements ---
 const jobListingsContainer = document.getElementById('jobListings');
