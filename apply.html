@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply - Deep Tech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // Enable class-based dark mode
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        glassBorder: 'rgba(255, 255, 255, 0.08)',
+                        glassBg: 'rgba(255, 255, 255, 0.03)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body
+    class="bg-[#FDFBF7] text-slate-900 dark:bg-[#030614] dark:text-slate-200 font-sans antialiased overflow-x-hidden min-h-screen relative selection:bg-cyan-500/30 selection:text-white transition-colors duration-500 flex flex-col">
+
+    <!-- Background Meshes -->
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none w-full h-full pb-[30%] dark:block hidden"
+        id="darkBgMesh">
+        <div
+            class="mesh-blob bg-[#0f172a] absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] max-w-[800px] max-h-[800px] rounded-full mix-blend-screen filter blur-[100px] opacity-70 animate-blob">
+        </div>
+        <div
+            class="mesh-blob bg-[#2e1065] absolute top-[20%] right-[-10%] w-[40vw] h-[40vw] max-w-[600px] max-h-[600px] rounded-full mix-blend-lighten filter blur-[120px] opacity-60 animate-blob animation-delay-2000">
+        </div>
+        <div
+            class="mesh-blob bg-[#134e4a] absolute bottom-[-10%] left-[20%] w-[60vw] h-[60vw] max-w-[900px] max-h-[900px] rounded-full mix-blend-lighten filter blur-[140px] opacity-50 animate-blob animation-delay-4000">
+        </div>
+    </div>
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none w-full h-full pb-[30%] dark:hidden block"
+        id="lightBgMesh">
+        <div
+            class="mesh-blob bg-[#fbbf24] absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] max-w-[800px] max-h-[800px] rounded-full mix-blend-multiply filter blur-[100px] opacity-30 animate-blob">
+        </div>
+        <div
+            class="mesh-blob bg-[#fb7185] absolute top-[20%] right-[-10%] w-[40vw] h-[40vw] max-w-[600px] max-h-[600px] rounded-full mix-blend-multiply filter blur-[120px] opacity-20 animate-blob animation-delay-2000">
+        </div>
+        <div
+            class="mesh-blob bg-[#fde047] absolute bottom-[-10%] left-[20%] w-[60vw] h-[60vw] max-w-[900px] max-h-[900px] rounded-full mix-blend-multiply filter blur-[140px] opacity-30 animate-blob animation-delay-4000">
+        </div>
+    </div>
+
+    <!-- Header area -->
+    <header
+        class="relative z-50 glass w-full px-6 py-4 sticky top-0 border-b border-glassBorder z-40 bg-white/70 dark:bg-[#0f172a]/70 transition-colors duration-500">
+        <div class="max-w-7xl mx-auto flex items-center justify-center">
+            <a href="index.html"
+                class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-3 group">
+                <div
+                    class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white shadow-[0_0_20px_rgba(6,182,212,0.4)] group-hover:scale-105 transition-transform duration-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <span
+                    class="bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600 dark:from-white dark:to-slate-400">NextRole</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="relative z-10 max-w-2xl mx-auto px-6 py-20 flex-1 w-full flex flex-col items-center justify-center">
+        <div
+            class="glass w-full rounded-3xl p-10 md:p-14 text-center border border-slate-200 dark:border-white/10 shadow-[0_0_50px_rgba(6,182,212,0.15)] bg-white/90 dark:bg-[#0f172a]/80 backdrop-blur-xl animate-fade-in-up">
+            <div
+                class="inline-flex w-20 h-20 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 items-center justify-center text-white mb-8 shadow-lg">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+
+            <h1 class="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-4 tracking-tight">Application
+                Submitted!</h1>
+
+            <p class="text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed font-medium">
+                You have successfully applied for the <br>
+                <span id="jobRoleDisplay"
+                    class="text-cyan-600 dark:text-cyan-400 font-bold text-xl md:text-2xl block mt-4 px-6 py-3 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl inline-block shadow-inner">...</span>
+                <br><span class="inline-block mt-4 text-slate-500 dark:text-slate-400">position.</span>
+            </p>
+
+            <a href="index.html"
+                class="inline-flex items-center justify-center px-8 py-4 rounded-xl relative group overflow-hidden bg-white dark:bg-[#0f172a] border border-cyan-500 text-cyan-600 dark:text-cyan-400 font-bold text-lg hover:text-white transition-all duration-300 w-full md:w-auto mt-4 shadow-sm hover:border-transparent">
+                <div
+                    class="absolute inset-0 w-full h-full bg-gradient-to-r from-cyan-500 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <span
+                    class="relative z-10 drop-shadow-md flex items-center gap-2 group-hover:text-white group-hover:drop-shadow-lg">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    Go Back
+                </span>
+            </a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const role = urlParams.get('role');
+            const displayElement = document.getElementById('jobRoleDisplay');
+
+            if (role) {
+                displayElement.textContent = role;
+            } else {
+                displayElement.textContent = "Unknown Role";
+            }
+        });
+
+        // Restore theme explicitly from localStorage for apply.html
+        if (localStorage.theme === "light") {
+            document.documentElement.classList.remove("dark");
+        } else {
+            document.documentElement.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

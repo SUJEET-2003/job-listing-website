@@ -145,7 +145,7 @@ function renderJobs(jobs) {
         // --- THE FIX: Ensure every job has a safe string ID for the modal ---
         const safeId = String(job.id || `job-tmp-${index}`);
         job.id = safeId; // Save it back to the object so the modal can find it
-        
+
         const card = document.createElement('div');
         // AI Startup Premium Custom Glass card style - dynamically dark/light
         card.className = "job-card pt-6 px-6 pb-5 rounded-3xl flex flex-col justify-between h-full animate-fade-in-up border border-slate-200 dark:border-white/5 relative overflow-hidden bg-white dark:bg-[#0f172a] shadow-sm";
@@ -158,7 +158,7 @@ function renderJobs(jobs) {
             'from-emerald-400 to-cyan-500',
             'from-blue-500 to-purple-600'
         ];
-        
+
         // Use our index for the color rotation
         const colorIndex = index % gradients.length;
         const selectedGradient = gradients[colorIndex];
@@ -200,10 +200,17 @@ window.openModal = function (jobId) {
 
     // Populate Data
     modalTitle.textContent = job.title;
-    modalCompany.querySelector('span').textContent = job.company;
+    const companyName = job.company || 'A';
+    modalCompany.querySelector('span').textContent = companyName;
     modalLocation.querySelector('span').textContent = job.location;
     modalCategory.textContent = job.category;
     modalExperience.textContent = job.experience;
+
+    // Set Modal Icon Letter
+    const modalIcon = document.getElementById('modalIcon');
+    if (modalIcon) {
+        modalIcon.textContent = companyName.charAt(0).toUpperCase();
+    }
 
     // Check and populate Salary field if it exists
     if (job.salary) {
@@ -242,6 +249,24 @@ function closeModal() {
         jobModal.classList.add('hidden');
         document.body.classList.remove('modal-open');
     }, 300); // matches duration-300 in HTML
+}
+
+/**
+ * Redirects the user to the apply page and passes the job role in URL parameters.
+ */
+function redirectToApply() {
+    const titleElement = document.getElementById('modalTitle');
+    if (titleElement) {
+        const title = titleElement.textContent.trim();
+        if (title && title !== '...') {
+            console.log('Redirecting to application for:', title);
+            window.location.href = `apply.html?role=${encodeURIComponent(title)}`;
+        } else {
+            console.error('Title is missing or not loaded yet.');
+        }
+    } else {
+        console.error('Modal title element not found.');
+    }
 }
 
 // Close events
